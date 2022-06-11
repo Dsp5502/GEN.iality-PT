@@ -1,32 +1,29 @@
+import { useState } from 'react';
 import {
-  CircularProgressbar,
   CircularProgressbarWithChildren,
+  buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const CircularBar = ({ score }) => {
+  const [scoreFinal, setScoreFinal] = useState(0);
+  setTimeout(() => {
+    setScoreFinal(score);
+  }, 500);
   return (
-    <div className='w-8/12 mt-5'>
+    <div className='w-6/12 mt-5'>
       <CircularProgressbarWithChildren
-        value={score}
+        value={scoreFinal}
         strokeWidth={5}
         maxValue={10}
-        styles={{
-          path: {
-            stroke: '#fefb72',
-          },
-          trail: {
-            stroke: '#fff',
-          },
-        }}
+        styles={buildStyles({
+          pathColor: score <= 5 ? '#DC2626' : '#fb923c',
+        })}
       >
-        <img
-          style={{ width: 40, marginTop: -5 }}
-          src='https://i.imgur.com/b9NyUGm.png'
-          alt='doge'
-        />
-        <div style={{ fontSize: 12, marginTop: -5 }}>
-          <strong>{score} / 10</strong>
+        <div style={{ fontSize: 20, marginTop: -5, textAlign: 'center' }}>
+          <strong>
+            Your Scored <br /> {score} / 10
+          </strong>
         </div>
       </CircularProgressbarWithChildren>
     </div>

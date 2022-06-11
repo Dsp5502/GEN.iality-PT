@@ -10,6 +10,7 @@ const QuizScreen = () => {
   const [position, setPosition] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
+  console.log(questions);
 
   useEffect(() => {
     const questionsLS = JSON.parse(localStorage.getItem('questions')) ?? [];
@@ -51,7 +52,7 @@ const QuizScreen = () => {
   const nextQuestion = (e) => {
     setPosition(position + 1);
     setLoading(!loading);
-    if (questions[position].correct_answer === e.target.innerText) {
+    if (questions[position].correct_answer === e.target.name) {
       setAnswers([
         ...answers,
         {
@@ -91,10 +92,10 @@ const QuizScreen = () => {
         </p>
       </div>
       <div className='flex w-11/12 mt-8 mb-10 justify-center items-center gap-10  '>
-        <button className='btn-true' onClick={nextQuestion}>
+        <button className='btn-true' name='True' onClick={nextQuestion}>
           True
         </button>
-        <button className='btn-false' onClick={nextQuestion}>
+        <button className='btn-false' name='False' onClick={nextQuestion}>
           False
         </button>
       </div>
