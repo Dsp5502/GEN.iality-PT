@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Start = () => {
   return (
-    <div className='h-screen w-5/6 text-white flex flex-col items-center justify-center mt-4 mx-auto'>
+    <div className='h-screen w-5/6 lg:w-2/6  text-white flex flex-col items-center justify-center lg:justify-start mt-4 mx-auto'>
       <h1 className='font-bold text-4xl text-center gradient-text'>
         Welcome to the Trivia Challenge
       </h1>

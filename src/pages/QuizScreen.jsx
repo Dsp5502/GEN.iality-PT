@@ -82,7 +82,7 @@ const QuizScreen = () => {
   ) : position === questions.length ? (
     <Results score={score} answers={answers} />
   ) : (
-    <div className='h-screen text-white w-11/12 flex flex-col items-center justify-center mx-auto mb-5 '>
+    <div className='h-screen text-white w-11/12 lg:w-2/6 flex flex-col items-center justify-center mx-auto mb-5 '>
       <h1 className='font-bold text-4xl text-center gradient-text '>
         {questions[position]?.category}
       </h1>
@@ -91,7 +91,7 @@ const QuizScreen = () => {
           {questions[position]?.question}
         </p>
       </div>
-      <div className='flex w-11/12 mt-8 mb-10 justify-center items-center gap-10  '>
+      <div className='flex w-11/12 lg:w-2/6 mt-8 mb-10 justify-center items-center gap-10  '>
         <button className='btn-true' name='True' onClick={nextQuestion}>
           True
         </button>

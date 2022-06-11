@@ -7,7 +7,7 @@ const Results = ({ score, answers }) => {
   };
   console.log(answers);
   return (
-    <div className='text-white w-11/12 flex flex-col justify-center items-center mx-auto'>
+    <div className='text-white w-11/12 lg:w-2/6 flex flex-col justify-center items-center mx-auto '>
       <CircularBar score={score} />
       <div className=' my-10 text-center text-2xl'>
         {answers.map((ans, index) => {
@@ -22,7 +22,7 @@ const Results = ({ score, answers }) => {
                 {ans.answer === 'true' ? '+' : '-'}
               </p>
 
-              <p className='mt-5 w-9/12 mx-auto text-sm border-b-2 pb-1  '>
+              <p className='mt-5 w-9/12 mx-auto text-sm border-b-2 pb-1 text-start '>
                 {ans.question}
               </p>
             </div>
