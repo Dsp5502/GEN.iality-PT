@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 
 const Results = ({ score, answers }) => {
   console.log(score, answers);
+  const restartTrivia = () => {
+    localStorage.clear();
+  };
   return (
     <div className='text-white w-8/12 flex flex-col justify-center items-center mx-auto'>
       <h1 className='font-bold text-4xl text-center'>
@@ -20,7 +23,10 @@ const Results = ({ score, answers }) => {
       <div>
         <Link to='/'>
           PLAY AGAIN?
-          <button className='my-10'> Restart Trivia</button>
+          <button className='my-10' onClick={restartTrivia}>
+            {' '}
+            Restart Trivia
+          </button>
         </Link>
       </div>
     </div>

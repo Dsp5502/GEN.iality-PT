@@ -4,10 +4,28 @@ import Results from './Results';
 
 const QuizScreen = () => {
   const [questions, setQuestions] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [position, setPosition] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    const questionsLS = JSON.parse(localStorage.getItem('questions')) ?? [];
+    const positionLS = JSON.parse(localStorage.getItem('position')) ?? 0;
+    const answersLS = JSON.parse(localStorage.getItem('answers')) ?? [];
+    if (questionsLS.length !== 0) {
+      setQuestions(questionsLS);
+      setPosition(positionLS);
+      setAnswers(answersLS);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('questions', JSON.stringify(questions));
+    localStorage.setItem('position', JSON.stringify(position));
+    localStorage.setItem('answers', JSON.stringify(answers));
+  }, [questions, position]);
+
   useEffect(() => {
     const getQuestionsAPI = async () => {
       try {
@@ -27,7 +45,7 @@ const QuizScreen = () => {
 
   const nextQuestion = (e) => {
     setPosition(position + 1);
-    setLoading(true);
+    setLoading(!loading);
     if (questions[position].correct_answer === e.target.innerText) {
       setAnswers([
         ...answers,
