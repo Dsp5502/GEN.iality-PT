@@ -10,7 +10,6 @@ const QuizScreen = () => {
   const [position, setPosition] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
-  console.log(questions);
 
   useEffect(() => {
     const questionsLS = JSON.parse(localStorage.getItem('questions')) ?? [];
@@ -41,7 +40,7 @@ const QuizScreen = () => {
         const { results } = await res.json();
         setQuestions(results);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
       setLoading(!loading);
     };

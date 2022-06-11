@@ -5,7 +5,7 @@ const Results = ({ score, answers }) => {
   const restartTrivia = () => {
     localStorage.clear();
   };
-  console.log(answers);
+
   return (
     <div className='text-white w-11/12 lg:w-2/6 flex flex-col justify-center items-center mx-auto '>
       <CircularBar score={score} />
