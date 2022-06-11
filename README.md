@@ -1,11 +1,15 @@
 # **GEN.iality - Prueba Tecnica**
 
 [![wakatime](https://wakatime.com/badge/user/54d759a2-12d9-48b4-9e4e-88518abe7706/project/b4597ad1-76fd-42bb-92d6-77e41772ca40.svg)](https://wakatime.com/badge/user/54d759a2-12d9-48b4-9e4e-88518abe7706/project/b4597ad1-76fd-42bb-92d6-77e41772ca40)
+
+
+<div>
+
 <img width="188" alt="image" src="https://user-images.githubusercontent.com/90290626/173203715-154dc6fc-b895-45ae-a018-a2f47680af33.png">
 <img width="190" alt="image" src="https://user-images.githubusercontent.com/90290626/173203724-d3de82c9-be99-4352-908f-f4bf66e4be91.png">
 <img width="191" alt="image" src="https://user-images.githubusercontent.com/90290626/173203733-4e09a8af-8540-48df-ae59-308ebc613e97.png">
 <img width="190" alt="image" src="https://user-images.githubusercontent.com/90290626/173203748-8bcdeba7-0845-44fa-ae51-a6e567bec38f.png">
-
+</div>
 
 
 
