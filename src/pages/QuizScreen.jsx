@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import Spinner from '../components/Spinner';
 import Results from './Results';
 
@@ -20,18 +19,16 @@ const QuizScreen = () => {
       } catch (err) {
         console.log(err);
       }
-      // setLoading(!loading);
+      setLoading(!loading);
     };
 
     getQuestionsAPI();
   }, []);
 
   const nextQuestion = (e) => {
-    console.log(e.target.innerText);
     setPosition(position + 1);
     setLoading(true);
     if (questions[position].correct_answer === e.target.innerText) {
-      console.log('correct');
       setAnswers([
         ...answers,
         {
@@ -39,9 +36,8 @@ const QuizScreen = () => {
           question: questions[position].question,
         },
       ]);
-      setScore(score + 10);
+      setScore(score + 1);
     } else {
-      console.log('wrong');
       setAnswers([
         ...answers,
         {
