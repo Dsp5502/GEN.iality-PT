@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import BarProgress from '../components/BarProgress';
 import Spinner from '../components/Spinner';
 import Results from './Results';
+import '../styles/BtnTrueFalse.css';
 
 const QuizScreen = () => {
   const [questions, setQuestions] = useState([]);
@@ -80,19 +81,25 @@ const QuizScreen = () => {
   ) : position === questions.length ? (
     <Results score={score} answers={answers} />
   ) : (
-    <div className='h-screen text-white w-11/12 flex flex-col items-center justify-center mx-auto mb-5'>
-      <h1 className='font-bold text-4xl text-center'>
+    <div className='h-screen text-white w-11/12 flex flex-col items-center justify-center mx-auto mb-5 '>
+      <h1 className='font-bold text-4xl text-center gradient-text '>
         {questions[position]?.category}
       </h1>
-      <div className='h-56 w-2/3 border-2 border-red-500 my-10'>
-        <p className='m-5'>{questions[position]?.question}</p>
+      <div className='h-52  w-8/12 bg-gray-100   mt-10 flex items-center   mx-auto  rounded-xl shadow-2xl'>
+        <p className='p-5 text-black text-center text-lg'>
+          {questions[position]?.question}
+        </p>
       </div>
-      <div className='flex w-11/12 mt-5 mb-10 justify-center items-center gap-10 '>
-        <button onClick={nextQuestion}>True</button>
-        <button onClick={nextQuestion}>False</button>
+      <div className='flex w-11/12 mt-8 mb-10 justify-center items-center gap-10  '>
+        <button className='btn-true' onClick={nextQuestion}>
+          True
+        </button>
+        <button className='btn-false' onClick={nextQuestion}>
+          False
+        </button>
       </div>
       <BarProgress position={position} />
-      <p>
+      <p className='mt-5'>
         {position + 1} of {questions.length}
       </p>
     </div>

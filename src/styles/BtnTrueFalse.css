@@ -1,0 +1,56 @@
+/* From uiverse.io */
+.btn-true {
+  padding: 1em 2em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-right: 5px;
+}
+
+.btn-true:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.btn-true:active {
+  transform: translateY(-1px);
+}
+.btn-false {
+  padding: 1em 2em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.btn-false:hover {
+  background-color: #c42823;
+  box-shadow: 0px 15px 20px rgba(229, 61, 46, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.btn-false:active {
+  transform: translateY(-1px);
+}
