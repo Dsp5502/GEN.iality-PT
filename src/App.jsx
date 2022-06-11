@@ -1,11 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import QuizScreen from './pages/QuizScreen';
 import Start from './pages/Start';
 
 function App() {
   return (
-    <div className='text-white flex justify-center items-center'>
-      <QuizScreen />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Start />} />
+        <Route path='quiz' element={<QuizScreen />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
