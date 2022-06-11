@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import BarProgress from '../components/BarProgress';
 import Spinner from '../components/Spinner';
 import Results from './Results';
 
@@ -13,10 +14,12 @@ const QuizScreen = () => {
     const questionsLS = JSON.parse(localStorage.getItem('questions')) ?? [];
     const positionLS = JSON.parse(localStorage.getItem('position')) ?? 0;
     const answersLS = JSON.parse(localStorage.getItem('answers')) ?? [];
+    const scoreLS = JSON.parse(localStorage.getItem('score')) ?? 0;
     if (questionsLS.length !== 0) {
       setQuestions(questionsLS);
       setPosition(positionLS);
       setAnswers(answersLS);
+      setScore(scoreLS);
     }
   }, []);
 
@@ -24,6 +27,7 @@ const QuizScreen = () => {
     localStorage.setItem('questions', JSON.stringify(questions));
     localStorage.setItem('position', JSON.stringify(position));
     localStorage.setItem('answers', JSON.stringify(answers));
+    localStorage.setItem('score', JSON.stringify(score));
   }, [questions, position]);
 
   useEffect(() => {
@@ -66,7 +70,7 @@ const QuizScreen = () => {
     }
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 300);
   };
 
   return loading ? (
@@ -87,6 +91,7 @@ const QuizScreen = () => {
         <button onClick={nextQuestion}>True</button>
         <button onClick={nextQuestion}>False</button>
       </div>
+      <BarProgress position={position} />
       <p>
         {position + 1} of {questions.length}
       </p>
